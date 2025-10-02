@@ -6,81 +6,110 @@
   <title>Tareas - 8 Semanas</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background: #f4f4f9;
     }
 
     header {
-      background: #4a90e2;
+      background: rgba(0, 95, 153, 0.9);
       color: white;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
     header h1 {
       margin: 0;
+      font-size: 2.5rem;
     }
 
     nav {
-      background: #005f99;
-      padding: 10px;
+      background: rgba(0,0,0,0.7);
+      padding: 12px;
       text-align: center;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ffd700;
     }
 
     main {
-      padding: 20px;
+      padding: 30px;
     }
 
     h2 {
       text-align: center;
       color: #004466;
+      margin-bottom: 30px;
     }
 
     .contenedor {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 20px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
       margin: auto;
     }
 
     .semana {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
+      position: relative;
+      padding: 50px 20px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    /* Efecto de oscurecimiento para que se lea el texto */
+    .semana::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+    }
+
+    .semana h3 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .semana h3 a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
     }
 
     .semana:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    .semana a {
-      text-decoration: none;
-      color: #4a90e2;
-      font-weight: bold;
-      font-size: 18px;
-    }
+    /* Aquí cambias las imágenes de fondo */
+    .semana:nth-child(1) { background-image: url("semana1.jpg"); }
+    .semana:nth-child(2) { background-image: url("semana2.jpg"); }
+    .semana:nth-child(3) { background-image: url("semana3.jpg"); }
+    .semana:nth-child(4) { background-image: url("semana4.jpg"); }
+    .semana:nth-child(5) { background-image: url("semana5.jpg"); }
+    .semana:nth-child(6) { background-image: url("semana6.jpg"); }
+    .semana:nth-child(7) { background-image: url("semana7.jpg"); }
+    .semana:nth-child(8) { background-image: url("semana8.jpg"); }
 
-    .semana a:hover {
-      color: #2d5f99;
-    }
   </style>
 </head>
 <body>
@@ -128,4 +157,5 @@
 
 </body>
 </html>
+
 
