@@ -2,122 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tareas - 8 Semanas</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-    }
-
-    header {
-      background: rgba(0, 95, 153, 0.9);
-      color: white;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    nav {
-      background: rgba(0,0,0,0.7);
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    main {
-      padding: 30px;
-    }
-
-    h2 {
-      text-align: center;
-      color: #004466;
-      margin-bottom: 30px;
-    }
-
-    .contenedor {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .semana {
-      position: relative;
-      padding: 50px 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-      color: white;
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
-
-    /* Efecto de oscurecimiento para que se lea el texto */
-    .semana::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.4);
-      border-radius: 15px;
-    }
-
-    .semana h3 {
-      position: relative;
-      z-index: 1;
-    }
-
-    .semana h3 a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .semana:hover {
-      transform: scale(1.07);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    /* Aquí cambias las imágenes de fondo */
-    .semana:nth-child(1) { background-image: url("https://tse2.mm.bing.net/th/id/OIP.TIqGiSh4NBlojUuyWyYUrAHaFJ?rs=1&pid=ImgDetMain&o=7&rm=3"); }
-    .semana:nth-child(2) { background-image: url("https://th.bing.com/th/id/OIP.YfBcJFV1gNqaUz2EbEWPugHaDt?w=291&h=174&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"); }
-    .semana:nth-child(3) { background-image: url("https://th.bing.com/th/id/OIP.jA-rXBCse7-04oqd0QgdawHaD1?w=288&h=179&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"); }
-    .semana:nth-child(4) { background-image: url("https://th.bing.com/th/id/OIP.PqYXXC33A-Tr9gtdDE9HHQHaE7?w=226&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"); }
-    .semana:nth-child(5) { background-image: url("https://i.pinimg.com/originals/38/77/c3/3877c333bb4979df4a4b3743fde7ec14.jpg"); }
-    .semana:nth-child(6) { background-image: url("https://th.bing.com/th/id/OIP._E5x8_HZW7mr5PWAJW0pvAHaEJ?w=287&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7"); }
-    .semana:nth-child(7) { background-image: url("https://th.bing.com/th/id/OIP.SZke0FY0SuY4BWFUz7KS4wHaEJ?w=310&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7"); }
-    .semana:nth-child(8) { background-image: url("https://th.bing.com/th/id/OIP.co9WgOyqV_u_d_SMmFlELAHaE7?w=273&h=182&c=7&r=0&o=5&dpr=1.1&pid=1.7"); }
-
+    body { font-family:'Segoe UI',sans-serif; margin:0; background:#f4f4f9; }
+    header { background:#005f99; color:white; padding:20px; text-align:center; }
+    nav { background: rgba(0,0,0,0.7); padding:12px; text-align:center; }
+    nav a { color:white; margin:0 20px; text-decoration:none; font-weight:bold; }
+    nav a:hover { color:#ffd700; }
+    main { padding:30px; }
+    .contenedor { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .semana { position:relative; padding:50px 20px; border-radius:15px; text-align:center; color:white; background:#007acc; box-shadow:0 6px 15px rgba(0,0,0,0.3); }
+    .semana h3 a { color:white; text-decoration:none; }
+    .semana:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.5); }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>📘 Mis Tareas</h1>
-    <p>Accede a las semanas y revisa tus trabajos guardados en la base de datos.</p>
-  </header>
+  <header><h1>📘 Mis Tareas</h1></header>
 
   <nav>
     <a href="index.html">inicio</a>
@@ -126,7 +26,7 @@
     
   </nav>
 
-  <main>
+ <main>
     <h2>Semanas disponibles</h2>
     <div class="contenedor">
       <div class="semana">
@@ -154,9 +54,9 @@
         <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/EjL__2dkvzNAgL27PI-MtzQBSgEGswfUz4oIrbVBtdkqkg?e=N9NdHp" target="_blank">Semana 8</a></h3>
       </div>
     </div>
-  </main>
-
+  </main>
 </body>
 </html>
+
 
 
