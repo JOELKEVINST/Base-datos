@@ -4,12 +4,101 @@
   <meta charset="UTF-8">
   <title>Inicio</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f0f8ff; margin:0; padding:0; }
-    header { background:#007acc; color:white; text-align:center; padding:20px; }
-    nav { background:#005f99; padding:10px; text-align:center; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    main { padding:20px; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin:0; 
+      padding:0; 
+      background: linear-gradient(135deg, #007acc, #00c6ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header { 
+      background: rgba(0,0,0,0.5); 
+      color:white; 
+      text-align:center; 
+      padding:30px; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    nav { 
+      background: rgba(0,0,0,0.7); 
+      padding:12px; 
+      text-align:center; 
+    }
+    nav a { 
+      color:white; 
+      margin:0 20px; 
+      text-decoration:none; 
+      font-weight:bold; 
+      transition: color 0.3s; 
+    }
+    nav a:hover { 
+      color: #ffd700; 
+    }
+    main { 
+      flex:1;
+      padding:40px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .intro {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .intro h2 {
+      color:#007acc;
+      margin-bottom:15px;
+    }
+    .intro p {
+      font-size:18px;
+      color:#333;
+      line-height:1.6;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card h3 {
+      color:#005f99;
+      margin-bottom:10px;
+    }
+    .card p {
+      font-size:16px;
+      color:#444;
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    footer {
+      background: rgba(0,0,0,0.8);
+      color: white;
+      text-align:center;
+      padding: 15px;
+      margin-top: auto;
+      font-size:14px;
+    }
   </style>
 </head>
 <body>
@@ -25,8 +114,38 @@
   </nav>
 
   <main>
-    <h2>Inicio</h2>
-    <p>Este es el contenido de la sección Inicio.</p>
+    <div class="intro">
+      <h2>Inicio</h2>
+      <p>
+        Esta página web fue creada como parte de los proyectos de la carrera de 
+        <strong>Ingeniería de Sistemas</strong>.  
+        Aquí podrás encontrar información personal, actividades semanales, trabajos de base de datos 
+        y otros proyectos relacionados con programación y tecnología.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📚 Entrega de Trabajos</h3>
+        <p>Sección dedicada a las entregas de prácticas, proyectos y tareas de la universidad.</p>
+      </div>
+      <div class="card">
+        <h3>🗄️ Base de Datos</h3>
+        <p>Ejemplos de modelos entidad-relación, diagramas relacionales y ejercicios prácticos.</p>
+      </div>
+      <div class="card">
+        <h3>💻 Programación</h3>
+        <p>Códigos desarrollados en Java, HTML, y otros lenguajes como parte del aprendizaje.</p>
+      </div>
+      <div class="card">
+        <h3>📆 Semanas</h3>
+        <p>Organización de las actividades y proyectos semanales para un mejor seguimiento.</p>
+      </div>
+    </div>
   </main>
+
+  <footer>
+    © 2025 - Página creada por Joel Kevin Soriano Timoteo | Ingeniería de Sistemas
+  </footer>
 </body>
 </html>
