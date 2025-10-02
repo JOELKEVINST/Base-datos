@@ -2,23 +2,174 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tareas</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
-    h1 { color: #007acc; }
-    ul { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    body { 
+      font-family: Arial, sans-serif; 
+      background: linear-gradient(to right, #f0f8ff, #e0f7fa); 
+      margin:0; 
+      padding:0; 
+    }
+    header { 
+      background:#007acc; 
+      color:white; 
+      text-align:center; 
+      padding:20px; 
+    }
+    nav { 
+      background:#005f99; 
+      padding:10px; 
+      text-align:center; 
+    }
+    nav a { 
+      color:white; 
+      margin:0 15px; 
+      text-decoration:none; 
+      font-weight:bold; 
+    }
+    nav a:hover { 
+      text-decoration:underline; 
+    }
+    main { 
+      padding:20px; 
+    }
+    h2 {
+      text-align: center;
+      color: #004466;
+    }
+
+    /* Estilo para las semanas */
+    .semanas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .semana {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+    .semana:hover {
+      transform: scale(1.05);
+    }
+    .semana h3 {
+      margin-top: 0;
+      padding: 10px;
+      border-radius: 6px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Colores distintos por semana */
+    .semana:nth-child(1) h3 { background: #ff6f61; }
+    .semana:nth-child(2) h3 { background: #42a5f5; }
+    .semana:nth-child(3) h3 { background: #66bb6a; }
+    .semana:nth-child(4) h3 { background: #ffa726; }
+    .semana:nth-child(5) h3 { background: #ab47bc; }
+    .semana:nth-child(6) h3 { background: #26a69a; }
+    .semana:nth-child(7) h3 { background: #ef5350; }
+    .semana:nth-child(8) h3 { background: #8d6e63; }
+
+    .semana ul {
+      padding-left: 20px;
+    }
+    .semana li {
+      margin: 5px 0;
+    }
+
+    /* Imagen dentro de cada semana */
+    .semana img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>📝 Tareas Pendientes</h1>
-  <p>Lista de cosas por hacer:</p>
-  <ul>
-    <li>📌 Terminar diseño web</li>
-    <li>🔍 Revisar errores en el código</li>
-    <li>⚡ Optimizar estilos CSS</li>
-    <li>📂 Preparar entrega del proyecto</li>
-  </ul>
-  <a href="index.html">⬅️ Volver al menú</a>
+  <header>
+    <h1>Bienvenido a Mi Página Web</h1>
+    <p>Estás en la página de Tareas</p>
+  </header>
+
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="sobre.html">Sobre mí</a>
+    <a href="tareas.html">Tareas</a>
+  </nav>
+
+  <main>
+    <h2>Mis Tareas</h2>
+    <div class="semanas">
+      <div class="semana">
+        <h3>Semana 1</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 1.1</li>
+          <li>Tarea 1.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 2</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 2.1</li>
+          <li>Tarea 2.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 3</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 3.1</li>
+          <li>Tarea 3.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 4</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 4.1</li>
+          <li>Tarea 4.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 5</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 5.1</li>
+          <li>Tarea 5.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 6</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 6.1</li>
+          <li>Tarea 6.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 7</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 7.1</li>
+          <li>Tarea 7.2</li>
+        </ul>
+      </div>
+      <div class="semana">
+        <h3>Semana 8</h3>
+        <img src="" alt="">
+        <ul>
+          <li>Tarea 8.1</li>
+          <li>Tarea 8.2</li>
+        </ul>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
