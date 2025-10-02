@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!D<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Primera Página</title>
+  <title>Página con Login</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,38 +11,13 @@
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #007acc;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    header, nav, section, footer {
+      display: none; /* 🔒 Ocultar todo hasta que el login sea válido */
     }
-    nav {
-      background-color: #005f99;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 20px;
-    }
-    footer {
-      background-color: #007acc;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-    /* Estilos para el formulario de login */
+    /* Estilos del login */
     .login-container {
       max-width: 400px;
-      margin: 30px auto;
+      margin: 100px auto;
       background: #ffffff;
       padding: 20px;
       border-radius: 8px;
@@ -76,27 +51,26 @@
   </style>
 </head>
 <body>
+
+  <!-- Login -->
+  <div class="login-container" id="loginForm">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario" required>
+    <input type="password" id="clave" placeholder="Contraseña" required>
+    <button onclick="validarLogin()">Entrar</button>
+    <p id="mensaje" style="color:red; text-align:center;"></p>
+  </div>
+
+  <!-- Contenido de la página (bloqueado al inicio) -->
   <header>
     <h1>Bienvenido a Mi Página Web</h1>
-    <p>Esta es una página de ejemplo en HTML</p>
+    <p>Has iniciado sesión correctamente 🎉</p>
   </header>
 
   <nav>
-    <a href="#login">Login</a>
     <a href="#inicio">Inicio</a>
     <a href="#sobre-mi">Sobre mí</a>
   </nav>
-
-  <section id="login">
-    <div class="login-container">
-      <h2>Iniciar Sesión</h2>
-      <form>
-        <input type="text" placeholder="Usuario" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
-  </section>
 
   <section id="inicio">
     <h2>Ventana de Inicio</h2>
@@ -105,12 +79,32 @@
 
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Hola, soy el creador de esta página. Me gusta aprender desarrollo web y crear proyectos prácticos.</p>
+    <p>Hola, soy el creador de esta página. Me gusta aprender desarrollo web.</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Mi Página Web - Todos los derechos reservados</p>
   </footer>
+
+  <script>
+    function validarLogin() {
+      let usuario = document.getElementById("usuario").value;
+      let clave = document.getElementById("clave").value;
+
+      // 🔒 Usuario y contraseña predefinidos
+      if (usuario === "admin" && clave === "1234") {
+        document.getElementById("loginForm").style.display = "none";
+
+        // Mostrar el contenido
+        document.querySelector("header").style.display = "block";
+        document.querySelector("nav").style.display = "block";
+        document.querySelectorAll("section").forEach(s => s.style.display = "block");
+        document.querySelector("footer").style.display = "block";
+      } else {
+        document.getElementById("mensaje").innerText = "Usuario o contraseña incorrectos ❌";
+      }
+    }
+  </script>
+
 </body>
 </html>
-
