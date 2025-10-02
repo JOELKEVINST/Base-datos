@@ -2,32 +2,108 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sobre mí</title>
+  <title>Información del mi persona</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f0f8ff; margin:0; padding:0; }
-    header { background:#007acc; color:white; text-align:center; padding:20px; }
-    nav { background:#005f99; padding:10px; text-align:center; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    main { padding:20px; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin:0; 
+      padding:0; 
+      background: linear-gradient(135deg, #007acc, #00c6ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header { 
+      background: rgba(0,0,0,0.5); 
+      color:white; 
+      text-align:center; 
+      padding:25px; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    nav { 
+      background: rgba(0,0,0,0.7); 
+      padding:12px; 
+      text-align:center; 
+    }
+    nav a { 
+      color:white; 
+      margin:0 20px; 
+      text-decoration:none; 
+      font-weight:bold; 
+      transition: color 0.3s; 
+    }
+    nav a:hover { 
+      color: #ffd700; 
+    }
+    main { 
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .card img {
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit: cover;
+      margin-bottom:15px;
+      border: 3px solid #007acc;
+    }
+    .card h2 {
+      color:#007acc;
+      margin-bottom:20px;
+    }
+    .card p {
+      font-size:18px;
+      margin:10px 0;
+      color:#333;
+    }
+    .card p strong {
+      color:#005f99;
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Bienvenido a Mi Página Web</h1>
-    <p>Estás en la página Sobre mí</p>
+    <p>Estás en la sección Información del Usuario</p>
   </header>
 
   <nav>
     <a href="inicio.html">Inicio</a>
     <a href="sobre.html">Sobre mí</a>
     <a href="tareas.html">Semanas</a>
+    
   </nav>
 
   <main>
-    <h2>Sobre mí</h2>
-    <p>Hola, soy el creador de esta página. Aquí puedes conocer más sobre mí.</p>
+    <div class="card">
+      <!-- Aquí puedes cambiar la imagen por una tuya -->
+      <img src="https://i.postimg.cc/3J8sc5vJ/profile.png" alt="Foto de perfil">
+      <h2>Información del Usuario</h2>
+      <p><strong>Nombre:</strong> SORIANO TIMOTEO Joel Kevin</p>
+      <p><strong>Código:</strong> s01297g</p>
+      <p><strong>Correo:</strong> s01297g@ms.upla.edu.pe</p>
+      <p><strong>Escuela Profesional:</strong> Ingeniería de Sistemas</p>
+      <p><strong>Año:</strong> 2025</p>
+    </div>
   </main>
 </body>
 </html>
+
 
