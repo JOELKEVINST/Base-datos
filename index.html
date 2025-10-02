@@ -1,4 +1,4 @@
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -11,10 +11,29 @@
       margin: 0;
       padding: 0;
     }
-    header, nav, section, footer {
-      display: none; /* 🔒 Ocultar todo hasta que el login sea válido */
+    header, nav {
+      display: none; /* Oculto hasta login */
     }
-    /* Estilos del login */
+    header {
+      background-color: #007acc;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #005f99;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     .login-container {
       max-width: 400px;
       margin: 100px auto;
@@ -28,20 +47,16 @@
       margin-bottom: 20px;
       color: #007acc;
     }
-    .login-container input {
+    .login-container input, .login-container button {
       width: 100%;
       padding: 10px;
       margin: 8px 0;
-      border: 1px solid #ccc;
       border-radius: 5px;
     }
     .login-container button {
-      width: 100%;
-      padding: 10px;
       background: #007acc;
       color: white;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
     }
@@ -61,45 +76,27 @@
     <p id="mensaje" style="color:red; text-align:center;"></p>
   </div>
 
-  <!-- Contenido de la página (bloqueado al inicio) -->
+  <!-- Contenido después del login -->
   <header>
     <h1>Bienvenido a Mi Página Web</h1>
     <p>Has iniciado sesión correctamente 🎉</p>
   </header>
 
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#sobre-mi">Sobre mí</a>
+    <a href="inicio.html">Inicio</a>
+    <a href="sobre.html">Sobre mí</a>
+    <a href="tareas.html">Tareas</a>
   </nav>
-
-  <section id="inicio">
-    <h2>Ventana de Inicio</h2>
-    <p>Bienvenido a la ventana de inicio. Aquí se mostrará la información principal de la página.</p>
-  </section>
-
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Hola, soy el creador de esta página. Me gusta aprender desarrollo web.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Mi Página Web - Todos los derechos reservados</p>
-  </footer>
 
   <script>
     function validarLogin() {
       let usuario = document.getElementById("usuario").value;
       let clave = document.getElementById("clave").value;
 
-      // 🔒 Usuario y contraseña predefinidos
       if (usuario === "admin" && clave === "1234") {
         document.getElementById("loginForm").style.display = "none";
-
-        // Mostrar el contenido
         document.querySelector("header").style.display = "block";
         document.querySelector("nav").style.display = "block";
-        document.querySelectorAll("section").forEach(s => s.style.display = "block");
-        document.querySelector("footer").style.display = "block";
       } else {
         document.getElementById("mensaje").innerText = "Usuario o contraseña incorrectos ❌";
       }
