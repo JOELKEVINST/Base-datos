@@ -3,83 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página con Login</title>
+  <title>Página Web - Inicio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
-      margin: 0;
-      padding: 0;
-    }
-    header, nav {
-      display: none; /* Oculto hasta login */
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin:0; 
+      padding:0; 
+      background: linear-gradient(135deg, #007acc, #00c6ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
-      background-color: #007acc;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      color:white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
-    nav {
-      background-color: #005f99;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .login-container {
-      max-width: 400px;
-      margin: 100px auto;
-      background: #ffffff;
-      padding: 20px;
+    header img {
+      height: 55px; 
+      margin-right: 15px;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: white;
+      padding: 3px;
     }
-    .login-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #007acc;
+    header h1 { margin: 0; font-size: 26px; }
+    header p { margin: 0; font-size: 14px; opacity: 0.9; }
+    nav { background: rgba(0,0,0,0.7); padding:12px; text-align:center; }
+    nav a { color:white; margin:0 20px; text-decoration:none; font-weight:bold; transition: color 0.3s; }
+    nav a:hover { color: #ffd700; }
+    main { flex:1; padding:40px; display:flex; flex-direction:column; align-items:center; }
+    .intro {
+      background: white; padding: 30px 40px; border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3); max-width: 800px;
+      text-align: center; margin-bottom: 30px;
     }
-    .login-container input, .login-container button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-    }
-    .login-container button {
-      background: #007acc;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .login-container button:hover {
-      background: #005f99;
-    }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; width: 100%; }
+    .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-align: center; transition: transform 0.3s; }
+    .card:hover { transform: translateY(-8px); }
+    footer { background: rgba(0,0,0,0.8); color: white; text-align:center; padding: 15px; margin-top: auto; font-size:14px; }
   </style>
 </head>
 <body>
-
-  <!-- Login -->
-  <div class="login-container" id="loginForm">
-    <h2>Iniciar Sesión</h2>
-    <input type="text" id="usuario" placeholder="Usuario" required>
-    <input type="password" id="clave" placeholder="Contraseña" required>
-    <button onclick="validarLogin()">Entrar</button>
-    <p id="mensaje" style="color:red; text-align:center;"></p>
-  </div>
-
-  <!-- Contenido después del login -->
   <header>
-    <h1>Bienvenido a Mi Página Web</h1>
-    <p>Has iniciado sesión correctamente 🎉</p>
+    <div style="display:flex; align-items:center;">
+      <img src="https://www.dehuancayo.com/imagenes/logo-upla.jpg" alt="Logo UPLA">
+      <h1>Bienvenido a Mi Página Web</h1>
+    </div>
+    <p>Estás en la página de Inicio 🎉</p>
   </header>
 
   <nav>
@@ -88,21 +62,20 @@
     <a href="tareas.html">Semanas</a>
   </nav>
 
-  <script>
-    function validarLogin() {
-      let usuario = document.getElementById("usuario").value;
-      let clave = document.getElementById("clave").value;
+  <main>
+    <div class="intro">
+      <h2>Inicio</h2>
+      <p>Esta página web fue creada como parte de los proyectos de la carrera de <strong>Ingeniería de Sistemas</strong>.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>📚 Entrega de Trabajos</h3><p>Sección dedicada a entregas de prácticas y proyectos.</p></div>
+      <div class="card"><h3>🗄️ Base de Datos</h3><p>Ejemplos de modelos entidad-relación y diagramas.</p></div>
+      <div class="card"><h3>💻 Programación</h3><p>Códigos en Java, HTML y más.</p></div>
+      <div class="card"><h3>📆 Semanas</h3><p>Organización de actividades semanales.</p></div>
+    </div>
+  </main>
 
-      if (usuario === "admin" && clave === "1234") {
-        document.getElementById("loginForm").style.display = "none";
-        document.querySelector("header").style.display = "block";
-        document.querySelector("nav").style.display = "block";
-      } else {
-        document.getElementById("mensaje").innerText = "Usuario o contraseña incorrectos ❌";
-      }
-    }
-  </script>
-
+  <footer>© 2025 - Página creada por Joel Kevin Soriano Timoteo</footer>
 </body>
 </html>
 
