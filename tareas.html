@@ -4,16 +4,94 @@
   <meta charset="UTF-8">
   <title>Tareas - 8 Semanas</title>
   <style>
-    body { font-family:'Segoe UI',sans-serif; margin:0; background:#f4f4f9; }
-    header { background:#005f99; color:white; padding:20px; text-align:center; }
-    nav { background: rgba(0,0,0,0.7); padding:12px; text-align:center; }
-    nav a { color:white; margin:0 20px; text-decoration:none; font-weight:bold; }
-    nav a:hover { color:#ffd700; }
-    main { padding:30px; }
-    .contenedor { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-    .semana { position:relative; padding:50px 20px; border-radius:15px; text-align:center; color:white; background:#007acc; box-shadow:0 6px 15px rgba(0,0,0,0.3); }
-    .semana h3 a { color:white; text-decoration:none; }
-    .semana:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.5); }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+    }
+
+    header {
+      background: #005f99;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .semana {
+      position: relative;
+      padding: 60px 20px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Oscurece la imagen para que el texto se vea bien */
+    .semana::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+    }
+
+    .semana h3 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .semana h3 a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .semana:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 🔹 Imágenes de fondo personalizadas */
+    .semana:nth-child(1) { background-image: url('https://th.bing.com/th/id/OIP.7EPyj4K-l3mAXkuOR-K7DwHaE8?w=251&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
+    .semana:nth-child(2) { background-image: url('https://th.bing.com/th/id/OIP.PgQw-eRrzWWkIwmkwKyfyAHaEZ?w=291&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
+    .semana:nth-child(3) { background-image: url('https://th.bing.com/th/id/OIP.TftfstX0ZbE_nplCVPOd1QHaHa?w=197&h=197&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
+    .semana:nth-child(4) { background-image: url('https://th.bing.com/th/id/OIP.ssR3ZsAtsuPMcvwwCSgfXwHaE8?w=249&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
+    .semana:nth-child(5) { background-image: url('https://th.bing.com/th/id/OIP.YvMpnyMkTeCNNS9uq3lC-gHaE7?w=257&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
+    .semana:nth-child(6) { background-image: url('https://th.bing.com/th?q=Fondo%20Futurista&pid=ImgDet&w=150&h=150&c=1&p=1&rs=1&t=1&dpr=1,1&mkt=es-xl&adlt=demote&o=7&rm=3'); }
+    .semana:nth-child(7) { background-image: url('https://img.freepik.com/fotos-premium/concepto-fondo-tecnologico_1029469-24314.jpg'); }
+    .semana:nth-child(8) { background-image: url('https://tse2.mm.bing.net/th/id/OIP.kcPfYlKS7BkGXDqZfN9GmQHaHa?cb=12&pid=ImgDet&w=206&h=206&c=7&dpr=1,1&o=7&rm=3'); }
+
   </style>
 </head>
 <body>
@@ -30,7 +108,7 @@
     <h2>Semanas disponibles</h2>
     <div class="contenedor">
       <div class="semana">
-        <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/Esj5ZUNSFLpElWzwgsrmls4Boi68DonlQeDA9xvagFsmlQ?e=4P6hsy" target="_blank">Semana 1</a></h3>
+        <h3><a href="https://www.bing.com/ck/a?!&&p=21b0dbedb07d2194f27b5787dbac45dea7120e16ccc64083288f4d83fdea762dJmltdHM9MTc2MDQwMDAwMA&ptn=3&ver=2&hsh=4&fclid=32241757-aaf6-67eb-2b40-0145abe36699&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbWFnZW5lcytnaXRodWImaWQ9MjdFNUQzRUE2NUUyMzRDQTY3RDY2ODY0QkNFQTZEMjNEMkU4QjY3QSZGT1JNPUlRRlJCQQ" target="_blank">Semana 1</a></h3>
       </div>
       <div class="semana">
         <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/Eq0ZfbNnooVPsiLOYoc8IREB0q7UnhPKIHNpHNtYrk-ejQ?e=WIcU9p" target="_blank">Semana 2</a></h3>
@@ -57,6 +135,8 @@
   </main>
 </body>
 </html>
+
+
 
 
 
