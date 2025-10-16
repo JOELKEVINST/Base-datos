@@ -40,7 +40,7 @@
 
     .contenedor {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
@@ -53,90 +53,304 @@
       background-size: cover;
       background-position: center;
       overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    /* Oscurece la imagen para que el texto se vea bien */
     .semana::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 15px;
+      z-index: 0;
     }
 
-    .semana h3 {
+    .semana h3, .archivos, .botones {
       position: relative;
       z-index: 1;
     }
 
-    .semana h3 a {
+    .semana h3 {
+      margin: 0;
+      font-size: 1.3em;
+      color: #fff;
+    }
+
+    /* Al hacer clic se agranda */
+    .semana.activa {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      padding-bottom: 30px;
+    }
+
+    .archivos {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      margin-top: 15px;
+    }
+
+    .semana.activa .archivos {
+      display: block;
+      opacity: 1;
+    }
+
+    .btn {
+      background: #0078d7;
       color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
       text-decoration: none;
-      font-size: 1.2em;
+      margin: 4px;
+      display: inline-block;
+      font-size: 0.9em;
+      white-space: nowrap;
     }
 
-    .semana:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    .btn:hover {
+      background: #005fa3;
     }
 
-    /* 🔹 Imágenes de fondo personalizadas */
-    .semana:nth-child(1) { background-image: url('https://th.bing.com/th/id/OIP.7EPyj4K-l3mAXkuOR-K7DwHaE8?w=251&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
-    .semana:nth-child(2) { background-image: url('https://th.bing.com/th/id/OIP.PgQw-eRrzWWkIwmkwKyfyAHaEZ?w=291&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
-    .semana:nth-child(3) { background-image: url('https://th.bing.com/th/id/OIP.TftfstX0ZbE_nplCVPOd1QHaHa?w=197&h=197&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
-    .semana:nth-child(4) { background-image: url('https://th.bing.com/th/id/OIP.ssR3ZsAtsuPMcvwwCSgfXwHaE8?w=249&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
-    .semana:nth-child(5) { background-image: url('https://th.bing.com/th/id/OIP.YvMpnyMkTeCNNS9uq3lC-gHaE7?w=257&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3'); }
-    .semana:nth-child(6) { background-image: url('https://th.bing.com/th?q=Fondo%20Futurista&pid=ImgDet&w=150&h=150&c=1&p=1&rs=1&t=1&dpr=1,1&mkt=es-xl&adlt=demote&o=7&rm=3'); }
+    .btn.descargar {
+      background: #28a745;
+    }
+
+    .btn.descargar:hover {
+      background: #1e7e34;
+    }
+
+    .actividad {
+      background: rgba(255,255,255,0.9);
+      color: #000;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 8px auto;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .botones {
+      margin-top: 10px;
+    }
+
+    .botones a {
+      background: #24292e;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .botones a:hover {
+      background: #000;
+    }
+
+    /* Imágenes de fondo */
+    .semana:nth-child(1) { background-image: url('https://th.bing.com/th/id/OIP.7EPyj4K-l3mAXkuOR-K7DwHaE8'); }
+    .semana:nth-child(2) { background-image: url('https://th.bing.com/th/id/OIP.PgQw-eRrzWWkIwmkwKyfyAHaEZ'); }
+    .semana:nth-child(3) { background-image: url('https://th.bing.com/th/id/OIP.TftfstX0ZbE_nplCVPOd1QHaHa'); }
+    .semana:nth-child(4) { background-image: url('https://th.bing.com/th/id/OIP.ssR3ZsAtsuPMcvwwCSgfXwHaE8'); }
+    .semana:nth-child(5) { background-image: url('https://th.bing.com/th/id/OIP.YvMpnyMkTeCNNS9uq3lC-gHaE7'); }
+    .semana:nth-child(6) { background-image: url('https://th.bing.com/th?q=Fondo%20Futurista&pid=ImgDet'); }
     .semana:nth-child(7) { background-image: url('https://img.freepik.com/fotos-premium/concepto-fondo-tecnologico_1029469-24314.jpg'); }
-    .semana:nth-child(8) { background-image: url('https://tse2.mm.bing.net/th/id/OIP.kcPfYlKS7BkGXDqZfN9GmQHaHa?cb=12&pid=ImgDet&w=206&h=206&c=7&dpr=1,1&o=7&rm=3'); }
-
+    .semana:nth-child(8) { background-image: url('https://tse2.mm.bing.net/th/id/OIP.kcPfYlKS7BkGXDqZfN9GmQHaHa'); }
   </style>
 </head>
 <body>
   <header><h1>📘 Mis Tareas</h1></header>
 
   <nav>
-    <a href="index.html">inicio</a>
+    <a href="index.html">Inicio</a>
     <a href="sobre.html">Sobre mí</a>
     <a href="tareas.html">Semanas</a>
-    
   </nav>
 
- <main>
+  <main>
     <h2>Semanas disponibles</h2>
     <div class="contenedor">
-      <div class="semana">
-        <h3><a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana1" target="_blank">Semana 1</a></h3>
+
+      <!-- 🔹 Semana 1 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 1</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana1" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad 1:</strong> Manual de cuenta en GitHub<br>
+            <a href="semana1/Arquitectura Centralizada.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana1/Arquitectura Centralizada.pdf" download class="btn descargar">Descargar</a>
+          </div>
+
+          <div class="actividad">
+            <strong>Actividad 2:</strong> Manual GitHub y requerimiento<br>
+            <a href="semana1.2/Manual de cuenta GitHub y su requerimiento.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana1.2/Manual de cuenta GitHub y su requerimiento.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana2" target="_blank">Semana 2</a></h3>
+
+      <!-- 🔹 Semana 2 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 2</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana2" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad 1:</strong> Diagrama <br>
+            <a href="semana2/diagrama.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana2/diagrama.pdf" download class="btn descargar">Descargar</a>
+          </div>
+          <div class="actividad">
+            <strong>Actividad 2:</strong> instalación SQL <br>
+            <a href="semana2/Manual de instalacion de SQL-Server (1).pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana2/Manual de instalacion de SQL-Server (1).pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana3" target="_blank">Semana 3</a></h3>
+
+      <!-- 🔹 Semana 3 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 3</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana3" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad:</strong> Cuadro comparativo<br>
+            <a href="semana3/UNIVERSIDAD PERUANA LOS ANDES FACULTAD DE INGENIERÍA “ESCUEL.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana3/UNIVERSIDAD PERUANA LOS ANDES FACULTAD DE INGENIERÍA “ESCUEL.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana4" target="_blank">Semana 4</a></h3>
+
+      <!-- 🔹 Semana 4 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 4</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana4" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad:</strong>Startup de SoftWare Educativo<br>
+            <a href="semana4/Documento.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana4/Documento.pdf" download class="btn descargar">Descargar</a>
+          </div>
+          <div class="actividad">
+            <strong>Actividad:</strong>Nube Distribuida Global<br>
+            <a href="semana4/Documento1.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana4/Documento1.pdf" download class="btn descargar">Descargar</a>
+          </div>
+          <div class="actividad">
+            <strong>Actividad:</strong>Arquitectura Recomendada: Nube Distribuida Global<br>
+            <a href="semana4/Documento2.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana4/Documento2.pdf" download class="btn descargar">Descargar</a>
+          </div>
+          <div class="actividad">
+            <strong>Actividad:</strong>Arquitectura Nube<br>
+            <a href="semana4/Documento3.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana4/Documento3.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/EvDS9tQmaQ9CvWCmZR3JCL8BJ15i3hpDzzAAaL8LaZSldg?e=GtLSLA" target="_blank">Semana 5</a></h3>
+
+      <!-- 🔹 Semana 5 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 5</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana5" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad:</strong> Guía de trabajo<br>
+            <a href="semana5/Guia.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana5/Guia.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/EutisiQBDB5Mo1XtNa3UA7QBZkfeCmP_YPnx71N1Kgn0VQ?e=uCNVw6" target="_blank">Semana 6</a></h3>
+
+      <!-- 🔹 Semana 6 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 6</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana6" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad:</strong> Proyecto intermedio<br>
+            <a href="semana6/Proyecto.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana6/Proyecto.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/EvZUSLSJyzhJo8TKh-TCQK8B1yucpdmc-GTMSDdu3I0xQQ?e=NS9rOq" target="_blank">Semana 7</a></h3>
+
+      <!-- 🔹 Semana 7 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 7</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana7" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad:</strong> Desarrollo de aplicación<br>
+            <a href="semana7/Desarrollo.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana7/Desarrollo.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
-      <div class="semana">
-        <h3><a href="https://universidadperuanalosand804-my.sharepoint.com/:f:/g/personal/s01297g_ms_upla_edu_pe/EjL__2dkvzNAgL27PI-MtzQBSgEGswfUz4oIrbVBtdkqkg?e=N9NdHp" target="_blank">Semana 8</a></h3>
+
+      <!-- 🔹 Semana 8 -->
+      <div class="semana" onclick="toggleSemana(this)">
+        <h3>Semana 8</h3>
+
+        <div class="botones">
+          <a href="https://github.com/JOELKEVINST/Base-datos/tree/main/semana8" target="_blank">Ver en GitHub</a>
+        </div>
+
+        <div class="archivos">
+          <div class="actividad">
+            <strong>Actividad:</strong> Evaluación final<br>
+            <a href="semana8/Evaluacion.pdf" target="_blank" class="btn ver">Ver</a>
+            <a href="semana8/Evaluacion.pdf" download class="btn descargar">Descargar</a>
+          </div>
+        </div>
       </div>
+
     </div>
-  </main>
+  </main>
+
+  <script>
+    function toggleSemana(elemento) {
+      const activa = document.querySelector('.semana.activa');
+      if (activa && activa !== elemento) {
+        activa.classList.remove('activa');
+      }
+      elemento.classList.toggle('activa');
+    }
+  </script>
 </body>
 </html>
-
-
-
 
 
